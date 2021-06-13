@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# WEB AVANCÉ - ÉVALUATION
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+L’évaluation se porte sous la forme d’une projet à mettre en place. Comme vous avez pu le
+faire durant votre formation, le but est de créer une application React simple composée de
+deux pages : une page de connexion et un tableau de données avec différentes interactions.
+Aucune maquette n’est fournie, c’est à vous de déterminer un design efficace pour ce
+besoin. Pensez-bien à l’harmonie des couleurs et des polices, à l’accessibilité et à l’UX.
+Vous devez donc penser à mettre en place un routeur pour gérer les deux pages.
+La page de connexion
 
-## Available Scripts
+Cette page est très simple. Elle se compose de trois éléments :
 
-In the project directory, you can run:
+- email
+- mot de passe
+- le bouton de connexion
 
-### `yarn start`
+La vérification de la véracité des identifiants se fera en dur dans le code. N’oubliez pas
+d’intégrer la gestion des erreurs notamment si les identifiants ne sont pas corrects.
+L’email correct doit être contact@web.fr
+Le mot de passe correct doit être azerty
+Page de données
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Cette page se compose de quatre éléments : un tableau de données, de la pagination, du tri
+et des filtres.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Comme vous pourrez le remarquer, l’objectif est d’utiliser les méthodes que nous avons vu
+en cours concernant la manipulation de tableau et d’objets comme filter, map, reduce,
+Object.keys, etc.
+Le tableau de données
 
-### `yarn test`
+Par le moyen que vous souhaitez (fichier json en dure, appel à une API, etc), affichez un
+tableau d’au moins 50 entrées sur 5 colonnes minimum.
+N’oubliez pas la ligne d’en tête du tableau contenant le nom des colonnes
+La pagination
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Le tableau ne doit pas afficher tous les éléments à la fois, il faut laisser le choix à l’utilisateur
+du nombre d’éléments à afficher grâce à une liste déroulante (afficher 5, 10, 20, 50 éléments
+à la fois). Comme tous les éléments ne sont pas affichés, il est nécessaire d’afficher un
+système de pagination permettant d’afficher et de naviguer vers de nombreux éléments :
 
-### `yarn build`
+- première page
+- page précédente
+- 2 pages précédents la page en cours
+- 2 pages suivants la page en cours
+- page suivante
+- dernière page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Au clic sur un de ces éléments, il sera nécessaire d’afficher les données correctes selon la
+page demandée.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Le tri
+Au clic sur une des cellules de la ligne d’en tête du tableau, les données du tableau doivent
+être affichées, triées dans l’ordre décroissant / croissant selon le paramètre ciblé. Il faut
+également afficher dans la cellule un indicateur de tri (par exemple une flèche vers le haut /
+vers le bas).
+Les filtres
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Selon les données que vous avez choisi d’afficher, il faut maintenant mettre en place deux
+fonctions de tri.
 
-### `yarn eject`
+Un champ texte vérifiant la présence de la valeur de ce champ dans une colonne du
+tableau. Prenons l’exemple suivant : vos données sont composées d’un champ “label”,
+certaines données ont par exemple pour valeur “voiture”, “bateau”, “toiture” et “moto”. Si
+l’utilisateur rentre le texte “itu” dans le champ texte, le tableau affichera seulement les lignes
+ayant comme label “voiture” et “toiture”.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Un bouton radio prenant deux valeurs et qui permettra d’afficher les lignes ayant la valeur
+choisie. Prenons l’exemple suivant : vos données sont composées d’un champ
+“motorisation” ayant pour valeur “essence” ou “diesel”. Vos boutons radio auront pour valeur
+“essence” ou “diesel”. Si l’utilisateur clique sur le bouton ayant pour valeur “essence”, le
+tableau affichera seulement les lignes ayant comme valeur pour le champ motorisation
+“essence”.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Attention à bien faire attention que toutes ces fonctionnalités fonctionnent entre elles. Par
+exemple, l’activation d’un filtre ne doit pas modifier la pagination et doit toujours afficher les
+données dans le bon ordre.
