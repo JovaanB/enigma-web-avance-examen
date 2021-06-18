@@ -18,6 +18,7 @@ La vérification de la véracité des identifiants se fera en dur dans le code. 
 d’intégrer la gestion des erreurs notamment si les identifiants ne sont pas corrects.
 L’email correct doit être contact@web.fr
 Le mot de passe correct doit être azerty
+
 Page de données
 
 Cette page se compose de quatre éléments : un tableau de données, de la pagination, du tri
@@ -26,11 +27,13 @@ et des filtres.
 Comme vous pourrez le remarquer, l’objectif est d’utiliser les méthodes que nous avons vu
 en cours concernant la manipulation de tableau et d’objets comme filter, map, reduce,
 Object.keys, etc.
+
 Le tableau de données
 
 Par le moyen que vous souhaitez (fichier json en dure, appel à une API, etc), affichez un
 tableau d’au moins 50 entrées sur 5 colonnes minimum.
 N’oubliez pas la ligne d’en tête du tableau contenant le nom des colonnes
+
 La pagination
 
 Le tableau ne doit pas afficher tous les éléments à la fois, il faut laisser le choix à l’utilisateur
