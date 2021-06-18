@@ -32,14 +32,14 @@ export const DataTable = ({dataToDisplay, sorts, setSorts}) => {
           {dataToDisplay?.length > 0 &&
             dataToDisplay.map(one => (
               <tr key={one.id}>
-                <td scope="col">
+                <td>
                   <img
                     src={`${one.thumbnail.path}.${one.thumbnail.extension}`}
                     alt={one.id}
                     width="40px"
                   />
                 </td>
-                <td scope="row">{one.id}</td>
+                <td>{one.id}</td>
                 <td>{one.name}</td>
                 <td>{one.description}</td>
                 <td>{one.comics?.available}</td>

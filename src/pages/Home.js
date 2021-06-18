@@ -57,6 +57,7 @@ export const Home = () => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {

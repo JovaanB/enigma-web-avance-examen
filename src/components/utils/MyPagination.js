@@ -52,6 +52,7 @@ const Pagination = ({
 
   useEffect(() => {
     gotoPage(1);
+    // eslint-disable-next-line
   }, [totalPages]);
 
   const handleClick = (page, evt) => {
