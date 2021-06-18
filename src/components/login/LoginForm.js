@@ -20,10 +20,10 @@ export const LoginForm = () => {
     ) {
       //Signin Success
       localStorage.setItem('isAuthenticated', 'true');
-      window.location.pathname = '/home';
+      window.location.pathname = '/';
     } else {
       //If credentials entered is invalid
-      setErrorMessage('Email/mot de passe incorrect');
+      setErrorMessage('Vos identifiants sont incorrects');
       return;
     }
   };

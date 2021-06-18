@@ -1,4 +1,4 @@
-import React, {useState, Fragment} from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
 const LEFT_PAGE = 'LEFT';
@@ -49,6 +49,10 @@ const Pagination = ({
     setState({currentPage});
     onPageChanged(paginationData);
   };
+
+  useEffect(() => {
+    gotoPage(1);
+  }, [totalPages]);
 
   const handleClick = (page, evt) => {
     evt.preventDefault();
@@ -114,63 +118,55 @@ const Pagination = ({
   const pages = fetchPageNumbers();
 
   return (
-    <Fragment>
-      <nav aria-label="Countries Pagination">
-        <ul className="pagination mt-4">
-          {pages.map((page, index) => {
-            if (page === LEFT_PAGE)
-              return (
-                <li key={index} className="page-item">
-                  <a
-                    className="page-link"
-                    href="#"
-                    aria-label="Previous"
-                    onClick={handleMoveLeft}
-                  >
-                    <span aria-hidden="true">&laquo;</span>
-                    <span className="sr-only">Previous</span>
-                  </a>
-                </li>
-              );
-
-            if (page === RIGHT_PAGE)
-              return (
-                <li key={index} className="page-item">
-                  <a
-                    className="page-link"
-                    href="#"
-                    aria-label="Next"
-                    onClick={handleMoveRight}
-                  >
-                    <span aria-hidden="true">&raquo;</span>
-                    <span className="sr-only">Next</span>
-                  </a>
-                </li>
-              );
-
+    <nav aria-label="Countries Pagination">
+      <ul className="pagination mt-4">
+        {pages.map((page, index) => {
+          if (page === LEFT_PAGE)
             return (
-              <li
-                key={index}
-                className={`page-item${currentPage === page ? ' active' : ''}`}
-              >
-                <a
+              <li key={index} className="page-item">
+                <ul
                   className="page-link"
-                  href="#"
-                  onClick={e => handleClick(page, e)}
+                  aria-label="Previous"
+                  onClick={handleMoveLeft}
                 >
-                  {page}
-                </a>
+                  <span aria-hidden="true">&laquo;</span>
+                  <span className="sr-only">Previous</span>
+                </ul>
               </li>
             );
-          })}
-        </ul>
-      </nav>
-    </Fragment>
+
+          if (page === RIGHT_PAGE)
+            return (
+              <li key={index} className="page-item">
+                <ul
+                  className="page-link"
+                  aria-label="Next"
+                  onClick={handleMoveRight}
+                >
+                  <span aria-hidden="true">&raquo;</span>
+                  <span className="sr-only">Next</span>
+                </ul>
+              </li>
+            );
+
+          return (
+            <li
+              key={index}
+              className={`page-item${currentPage === page ? ' active' : ''}`}
+            >
+              <ul className="page-link" onClick={e => handleClick(page, e)}>
+                {page}
+              </ul>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 };
 
 Pagination.propTypes = {
-  totalRecords: PropTypes.number.isRequired,
+  totalRecords: PropTypes.number,
   pageLimit: PropTypes.number,
   pageNeighbours: PropTypes.number,
   onPageChanged: PropTypes.func,

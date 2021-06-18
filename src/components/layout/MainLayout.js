@@ -4,7 +4,7 @@ import {Button} from 'react-bootstrap';
 export const MainLayout = props => {
   const onLogout = () => {
     localStorage.removeItem('isAuthenticated');
-    window.location.pathname = '/';
+    window.location.pathname = '/login';
   };
 
   const isAuthenticated = localStorage.getItem('isAuthenticated');
@@ -12,9 +12,7 @@ export const MainLayout = props => {
   return (
     <>
       <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-          Comics
-        </a>
+        <p className="navbar-brand">MARVEL</p>
         {isAuthenticated && (
           <Button variant="danger" onClick={onLogout}>
             Se déconnecter
